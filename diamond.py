@@ -16,16 +16,21 @@ class Diamond:
         diamond_to_add = 1
 
         for _ in range(loop_times +1):
+            
             to_append = self.generate_position_shape(spaces_to_add,diamond_to_add)
             spaces_to_add-=1
             diamond_to_add+=2
-            if _ < loop_times:
-                self.top_shapes.append(to_append)
-            print(to_append)
-            if _ == loop_times:
-                self.print_last_portion()
+            
+            self.loop_time_operations(_,loop_times,to_append)
             
 
+    def loop_time_operations(self,time, loop_times, to_append):
+            if time < loop_times:
+                self.top_shapes.append(to_append)
+            print(to_append)
+            if time == loop_times:
+                self.print_last_portion()
+                
     def generate_position_shape(self,spaces_to_add,diamond_to_add):
         spaces = " " * spaces_to_add
         diamond = "*" * diamond_to_add
