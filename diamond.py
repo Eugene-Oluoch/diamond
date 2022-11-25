@@ -61,5 +61,6 @@ class Diamond:
         else:
             self.try_again()
     
-dmd = Diamond()
-dmd.engage_user()
+if __name__ == "__main__":
+    dmd = Diamond()
+    dmd.engage_user()
