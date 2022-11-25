@@ -5,7 +5,7 @@ class Diamond:
         
     def diamond(self,number):
         if self.is_odd(number):
-            loop_times = number // 2
+            loop_times = self.get_loop_time(number)
             spaces_to_add = loop_times
             diamond_to_add = 1
             array = []
@@ -31,6 +31,9 @@ class Diamond:
         reversed_array = array[::-1]
         for num in reversed_array:
             print(num)
+            
+    def get_loop_time(self,number):
+        return number // 2
             
     def is_odd(self,number):
         return number % 2 != 0        
